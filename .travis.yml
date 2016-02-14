@@ -15,7 +15,7 @@ env:
     - CCACHE_MAXSIZE=100M
 
 before_script:
-  - pip install cmakelint colout
+  - pip install --user cmakelint colout
   - cmake . | colout -t cmake
 
 script:
