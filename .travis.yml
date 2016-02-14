@@ -1,0 +1,23 @@
+language: c
+sudo: false
+compiler:
+- clang
+- gcc
+cache:
+  - ccache
+  - pip
+
+env:
+  global:
+    - USE_CCACHE=1
+    - CCACHE_SLOPPINESS=pch_defines,time_macros
+    - CCACHE_COMPRESS=1
+    - CCACHE_MAXSIZE=100M
+
+before_script: cmake .
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - valgrind
