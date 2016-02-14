@@ -9,6 +9,8 @@ set(LIB_MINOR_VERSION "1")
 set(LIB_PATCH_VERSION "0")
 set(LIB_VERSION_STRING "${LIB_MAJOR_VERSION}.${LIB_MINOR_VERSION}.${LIB_PATCH_VERSION}")
 
+include(LintCMakeFiles)
+
 # compile in release with debug info mode by default
 set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Build Type")
 
@@ -16,4 +18,3 @@ set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Build Type")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include(ConfigureCCache)
-include(LintCmakeFiles)
