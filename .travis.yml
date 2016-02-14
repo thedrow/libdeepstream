@@ -14,7 +14,11 @@ env:
     - CCACHE_COMPRESS=1
     - CCACHE_MAXSIZE=100M
 
-before_script: cmake .
+before_script:
+  - pip install cmakelint
+  - cmake .
+
+script: make -j 2
 
 addons:
   apt:
