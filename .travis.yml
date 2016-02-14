@@ -15,6 +15,7 @@ env:
     - CCACHE_MAXSIZE=100M
 
 before_script:
+  - set -o pipefail
   - pip install --user cmakelint colout
   - cmake . | colout -t cmake
 
