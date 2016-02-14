@@ -17,11 +17,11 @@ env:
 before_script:
   - set -o pipefail
   - pip install --user cmakelint colout
-  - cmake . | colout -t cmake
+  - cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON . 2>&1 | colout -t cmake
 
 script:
-  - make -j 2 | colout -t g++
-  - make test | colout -t g++
+  - make -j 2 2>&1 | colout -t g++
+  - make test 2>&1 | colout -t g++
 
 addons:
   apt:
