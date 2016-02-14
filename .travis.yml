@@ -15,10 +15,12 @@ env:
     - CCACHE_MAXSIZE=100M
 
 before_script:
-  - pip install cmakelint
-  - cmake .
+  - pip install cmakelint colout
+  - cmake . | colout -t cmake
 
-script: make -j 2
+script:
+  - make -j 2 | colout -t g++
+  - make test | colout -t g++
 
 addons:
   apt:
