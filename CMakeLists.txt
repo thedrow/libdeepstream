@@ -23,7 +23,7 @@ if(CCACHE_FOUND)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Qunused-arguments -fcolor-diagnostics")
     endif()
 endif()
-
+message("Executing cmakelint...")
 execute_process(COMMAND "cmakelint" "--config=.cmakelintrc" CMakeLists.txt RESULT_VARIABLE CMAKELINT_RESULT)
 
 if(NOT CMAKELINT_RESULT EQUAL 0)
