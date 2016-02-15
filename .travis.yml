@@ -1,6 +1,7 @@
 language: c
 # TODO: Use sudo: false when PPA for CMake 3 is found
 sudo: required
+dist: trusty
 compiler:
 - clang
 - gcc
