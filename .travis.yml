@@ -1,5 +1,6 @@
 language: c
-sudo: false
+# TODO: Use sudo: false when PPA for CMake 3 is found
+sudo: required
 compiler:
 - clang
 - gcc
@@ -32,5 +33,3 @@ addons:
     packages:
       - cmake
       - valgrind
-    sources:
-      - kalakris-cmake
