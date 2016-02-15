@@ -19,7 +19,9 @@ env:
 
 before_script:
   - set -o pipefail
+  - pip install --user --upgrade pip setuptools wheel
   - pip install --user cmakelint colout
+  - cmake --version
   - cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON . 2>&1 | colout -t cmake
 
 script:
