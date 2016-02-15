@@ -16,7 +16,7 @@ env:
     - CCACHE_SLOPPINESS=pch_defines,time_macros
     - CCACHE_COMPRESS=1
     - CCACHE_MAXSIZE=100M
-    - PATH="$HOME/.local/bin:$PATH"
+    - PATH="$HOME/.local/bin:$HOME/Library/Python/2.7/bin:$PATH"
 
 before_script:
   - set -o pipefail
