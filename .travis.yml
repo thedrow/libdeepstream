@@ -6,6 +6,9 @@ compiler:
 cache:
   - ccache
   - pip
+os:
+  - linux
+  - osx
 
 env:
   global:
@@ -20,8 +23,7 @@ before_script:
   - cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON . 2>&1 | colout -t cmake
 
 script:
-  - make -j 2 2>&1 | colout -t g++
-  - make test 2>&1 | colout -t g++
+  - make all -j 2 2>&1 | colout -t g++
 
 addons:
   apt:
