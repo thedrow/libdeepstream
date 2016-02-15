@@ -32,3 +32,5 @@ addons:
     packages:
       - cmake
       - valgrind
+    sources:
+      - kalakris-cmake
