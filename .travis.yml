@@ -24,8 +24,7 @@ before_script:
   - sh cmake-3.4.3-Linux-x86_64.sh --prefix="$HOME/.local/" --skip-license
   - set -o pipefail
   - pip install --user cmakelint colout
-  - cmake --version
-  - cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -Wno-dev . 2>&1 | colout -t cmake
+  - ./configure
 
 script:
   - make all -j 2 2>&1 | colout -t g++

@@ -17,6 +17,7 @@ set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Build Type")
 # Build all binaries in a separate directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+include(GNUInstallDirs)
 include(ConfigureCCache)
 include(FindGTESTSRC)
 
