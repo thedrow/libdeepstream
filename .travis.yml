@@ -1,7 +1,5 @@
 language: c
-# TODO: Use sudo: false when PPA for CMake 3 is found
-sudo: required
-dist: trusty
+sudo: false
 compiler:
 - clang
 - gcc
@@ -21,8 +19,9 @@ env:
     - PATH="$HOME/.local/bin:$HOME/Library/Python/2.7/bin:$PATH"
 
 before_script:
-  - sudo apt-add-repository -y ppa:george-edison55/cmake-3.x
-  - sudo apt-get install -y cmake3
+  - mkdir $HOME/.local/
+  - curl -O https://cmake.org/files/v3.4/cmake-3.4.3-Linux-x86_64.sh
+  - sh cmake-3.4.3-Linux-x86_64.sh --prefix="$HOME/.local/" --skip-license
   - set -o pipefail
   - pip install --user cmakelint colout
   - cmake --version
@@ -34,7 +33,4 @@ script:
 addons:
   apt:
     packages:
-      #- cmake3
       - valgrind
-    sources:
-      #- ppa:george-edison55/cmake-3.x
