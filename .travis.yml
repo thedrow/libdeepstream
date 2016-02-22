@@ -7,7 +7,7 @@ cache:
   ccache: true
   pip: true
   directories:
-    - $HOME/.local/bin
+    - $HOME/.local/
 os:
   - linux
   - osx
