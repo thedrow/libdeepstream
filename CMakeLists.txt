@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
+message(STATUS "CMake Version: ${CMAKE_VERSION}")
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules)
 set(CMAKE_COLOR_MAKEFILE ON)
 set(CMAKE_VERBOSE_MAKEFILE ON)

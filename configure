@@ -312,9 +312,6 @@ if [ "x${LDFLAGS}" != "x" ]; then
     done
 fi
 
-CMAKE_VERSION=`cmake --version | awk 'NR==1{print $3};'`
-echo "Current CMake version: $CMAKE_VERSION"
-
 maybe_color() { type -P colout >/dev/null && colout -t cmake - || cat -u; };
 
 eval "cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -Wno-dev ${TOP_SRCDIR} -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${LIBDIR} ${CMAKE_ARGS}" | maybe_color
