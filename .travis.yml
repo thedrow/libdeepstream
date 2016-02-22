@@ -4,8 +4,10 @@ compiler:
 - clang
 - gcc
 cache:
-  - ccache
-  - pip
+  ccache: true
+  pip: true
+  directories:
+    - $HOME/.local/bin
 os:
   - linux
   - osx
