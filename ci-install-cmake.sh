@@ -6,6 +6,5 @@ if [ "$TRAVIS_OS_NAME" = 'linux' ] ; then
     sh cmake-3.4.3-Linux-x86_64.sh --prefix="$HOME/.local/" --skip-license
   fi
 elif [ "$TRAVIS_OS_NAME" = 'osx' ]; then
-  brew update
-  brew upgrade cmake --cleanup
+  brew reinstall https://raw.githubusercontent.com/Homebrew/homebrew/master/Library/Formula/cmake.rb
 fi
