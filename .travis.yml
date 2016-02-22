@@ -20,8 +20,8 @@ env:
 
 before_script:
   - mkdir $HOME/.local/
-  - curl -O https://cmake.org/files/v3.4/cmake-3.4.3-Linux-x86_64.sh
-  - sh cmake-3.4.3-Linux-x86_64.sh --prefix="$HOME/.local/" --skip-license
+  - curl -O https://cmake.org/files/v3.4/cmake-3.4.3-$(uname -s)-x86_64.sh
+  - sh cmake-3.4.3-$(uname -s)-x86_64.sh --prefix="$HOME/.local/" --skip-license
   - set -o pipefail
   - pip install --user cmakelint colout
   - ./configure
